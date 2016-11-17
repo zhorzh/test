@@ -22,9 +22,9 @@ def download():
     # TODO: replace API key, borrowed from another user
     api_key = 'E7FDCCBA39FBA0268555B7E81D73CD47'
     url = 'http://api.eia.gov/series/\
-        ?api_key={api_key}\
-        &series_id={series_id}\
-        &out={out}'
+?api_key={api_key}\
+&series_id={series_id}\
+&out={out}'
 
     # download daily prices and save to csv
     response = requests.get(url.format(api_key=api_key,
