@@ -49,7 +49,7 @@ def download():
 @app.route('/api/data')
 def data():
     # convert prices from csv file to json
-    with open('srv/server/data/prices_monthly.csv', 'r') as file:
+    with open('/srv/server/data/prices_monthly.csv', 'r') as file:
         reader = csv.reader(file)
         data = list(reader)
     # convert prices to float number
