@@ -1,0 +1,24 @@
+version: '2'
+services:
+  server:
+    build: ./server
+    container_name: server
+    ports:
+      - "8000:8000"
+    environment:
+      - FLASK_APP=/srv/server/run.py
+      - FLASK_DEBUG=1
+    command: flask run --host=0.0.0.0 --port=8000
+#    command: gunicorn run:app --chdir /srv/server -b 0.0.0.0:8000
+    volumes:
+      - ./server:/srv/server
+ 
+  nginx:
+    image: nginx
+    container_name: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+    links:
+      - server

@@ -1,0 +1,11 @@
+[user]
+	name = zhorzh
+	email = zhorzh.alexandr@gmail.com
+[core]
+	editor = vim
+[push]
+	default = simple
+[log]
+	date = local
+[format]
+	pretty = format:%C(yellow)% %C(green)%<(7)%an %C(blue)%<(24)%ad %C(red)% %Creset%s
