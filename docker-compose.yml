@@ -8,6 +8,8 @@ services:
     environment:
       - FLASK_APP=/srv/server/run.py
       - FLASK_DEBUG=1
+      - LC_ALL=C.UTF-8
+      - LANG=C.UTF-8
     command: flask run --host=0.0.0.0 --port=8000
 #    command: gunicorn run:app --chdir /srv/server -b 0.0.0.0:8000
     volumes:
